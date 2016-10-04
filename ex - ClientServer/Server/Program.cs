@@ -5,7 +5,11 @@ using System.Text;
 namespace Server {
     class Program {
         static void Main(string[] args) {
-            // This doesn't work outside the local workstation (e.g. on a LAN):
+            /*
+             In order to gain access to this server, windows has to allow access.
+             1. Let through windows firewall
+             2. Run with admin privileges
+             */
             HttpListener listener = new HttpListener();
             listener.Prefixes.Add("http://localhost:8000/");
             listener.Start();
